@@ -111,7 +111,74 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 @font-face{font-family:"Open Sans";font-style:normal;font-weight:variable;font-display:fallback;src:url('fonts/OpenSans-Variable.ttf') format('truetype');}
 @font-face{font-family:Manrope;font-style:normal;font-weight:variable;font-display:fallback;src:url('fonts/Manrope-Variable.ttf') format('truetype');}
 </style>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><!-- NewsBreak Pixel - Page Load -->
+<script>
+!(function (e, n, t, i, p, a, s) {
+  e[i] ||
+    (((p = e[i] = function () {
+      p.process ? p.process.apply(p, arguments) : p.queue.push(arguments);
+    }).queue = []),
+    (p.t = +new Date()),
+    ((a = n.createElement(t)).async = 1),
+    (a.src = 'https://static.newsbreak.com/business/tracking/nbpixel.js?t=' + 864e5 * Math.ceil(new Date() / 864e5)),
+    (s = n.getElementsByTagName(t)[0]).parentNode.insertBefore(a, s));
+})(window, document, 'script', 'nbpix');
+nbpix('init', '2096211055689379841');
+nbpix('event', 'pageload');
+</script>
+<!-- End NewsBreak Pixel -->
+
+<!-- Preserve tracking parameters on outbound links -->
+<script>
+(function () {
+  'use strict';
+
+  var DESTINATION = 'https://lj.dailyhealthtotal.com/news';
+
+  function trackedDestination() {
+    var target = new URL(DESTINATION);
+    var currentParams = new URLSearchParams(window.location.search);
+
+    currentParams.forEach(function (value, key) {
+      target.searchParams.append(key, value);
+    });
+
+    return target.toString();
+  }
+
+  function isDestinationLink(anchor) {
+    try {
+      var url = new URL(anchor.getAttribute('href'), window.location.href);
+      var destination = new URL(DESTINATION);
+      return url.origin === destination.origin && url.pathname === destination.pathname;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function refreshOutboundLinks() {
+    var url = trackedDestination();
+    document.querySelectorAll('a[href]').forEach(function (anchor) {
+      if (isDestinationLink(anchor)) {
+        anchor.href = url;
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', refreshOutboundLinks);
+  window.addEventListener('pageshow', refreshOutboundLinks);
+
+  document.addEventListener('click', function (event) {
+    var anchor = event.target.closest && event.target.closest('a[href]');
+    if (anchor && isDestinationLink(anchor)) {
+      anchor.href = trackedDestination();
+    }
+  }, true);
+})();
+</script>
+<!-- End tracking parameter preservation -->
+
+</head>
 <body class="wp-singular page-template page-template-elementor_canvas page page-id-42 wp-embed-responsive wp-theme-hostinger-ai-theme hostinger-ai-builder-gutenberg elementor-default elementor-template-canvas elementor-kit-6 elementor-page elementor-page-42 customize-support" __processed_5ae1fe08-4463-43a1-88d5-a3342f4aa7af__="true" data-elementor-device-mode="mobile" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQiLCJSRURESVQiOiJlbmFibGVkIiwiUElOVEVSRVNUIjoiZW5hYmxlZCIsIklOU1RBR1JBTSI6ImVuYWJsZWQiLCJUSUtUT0siOiJlbmFibGVkIiwiTElOS0VESU4iOiJlbmFibGVkIiwiQ09ORklHIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjIuMi4xIiwic2NvcmUiOjIwMjAxMH1d">
 			<div data-elementor-type="wp-page" data-elementor-id="42" class="elementor elementor-42">
 				<div class="elementor-element elementor-element-3e5b67b e-con e-atomic-element e-flexbox-base e-7304076 " data-id="3e5b67b" data-element_type="e-flexbox" data-e-type="e-flexbox" data-interaction-id="3e5b67b">
@@ -547,7 +614,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </style>
 <header>
   <div class="topbar" bis_skin_checked="1">
-    <a href="https://healthinsider-us.online/health-insider-vsl/" class="brand">
+    <a href="https://lj.dailyhealthtotal.com/news" class="brand">
       <span class="brand-mark">
         <svg viewBox="0 0 24 24">
           <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" fill="#e0142c" stroke="none"></path>
@@ -557,12 +624,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       <span class="brand-name">Health Insider</span>
     </a>
     <nav class="primary-nav">
-      <a href="https://healthinsider-us.online/health-insider-vsl/" class="active">On the Show</a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/">Shop</a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/">Health</a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/">Start Today</a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/">Parents</a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/">Life</a>
+      <a href="https://lj.dailyhealthtotal.com/news" class="active">On the Show</a>
+      <a href="https://lj.dailyhealthtotal.com/news">Shop</a>
+      <a href="https://lj.dailyhealthtotal.com/news">Health</a>
+      <a href="https://lj.dailyhealthtotal.com/news">Start Today</a>
+      <a href="https://lj.dailyhealthtotal.com/news">Parents</a>
+      <a href="https://lj.dailyhealthtotal.com/news">Life</a>
     </nav>
     <div class="actions" bis_skin_checked="1">
       <button class="icon-btn" aria-label="Notifications">
@@ -586,12 +653,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     </div>
   </div>
   <nav class="mobile-nav" id="mobileNav">
-    <a href="https://healthinsider-us.online/health-insider-vsl/" class="active">On the Show</a>
-    <a href="https://healthinsider-us.online/health-insider-vsl/">Shop</a>
-    <a href="https://healthinsider-us.online/health-insider-vsl/">Health</a>
-    <a href="https://healthinsider-us.online/health-insider-vsl/">Start Today</a>
-    <a href="https://healthinsider-us.online/health-insider-vsl/">Parents</a>
-    <a href="https://healthinsider-us.online/health-insider-vsl/">Life</a>
+    <a href="https://lj.dailyhealthtotal.com/news" class="active">On the Show</a>
+    <a href="https://lj.dailyhealthtotal.com/news">Shop</a>
+    <a href="https://lj.dailyhealthtotal.com/news">Health</a>
+    <a href="https://lj.dailyhealthtotal.com/news">Start Today</a>
+    <a href="https://lj.dailyhealthtotal.com/news">Parents</a>
+    <a href="https://lj.dailyhealthtotal.com/news">Life</a>
     <div class="mobile-search" bis_skin_checked="1">
       <input type="text" placeholder="Search...">
     </div>
@@ -716,77 +783,77 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 				<div class="elementor-element elementor-element-5e62c5d9 elementor-widget elementor-widget-text-editor" data-id="5e62c5d9" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p><span style="color: #333333;"><strong>Oprah Winfrey</strong> insists that Ozempic and Mounjaro only put her through a rebound effect — all the weight she lost came back just a few weeks after she stopped using the weight-loss pens.</span></p><p><span style="color: #333333;">She says her secret to burn fat and stay slim was a simple <span class="s1"><b>baking soda trick</b></span> discovered in Hollywood — the same one Rebel Wilson and Jennifer Hudson rely on.</span></p><p><span style="color: #333333;">Some say that even Adele used this method to lose weight.</span></p><p><span style="color: #333333;"><b>But is that true?</b></span></p><p><strong><span style="color: #333333;">Read until the end to see how to make the recipe.</span></strong></p>								</div>
 				<div class="elementor-element elementor-element-1858dfda elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="1858dfda" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":781,"w":940,"h":579,"abs_x":290,"abs_y":781}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":781,"w":940,"h":579,"abs_x":290,"abs_y":781}"="">
 							<img fetchpriority="high" decoding="async" width="1098" height="677" src="images/Captura-de-Tela-2026-08-05-as-12.22.46-2.png" class="attachment-full size-full wp-image-2749" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.22.46-2.png 1098w, images/Captura-de-Tela-2026-08-05-as-12.22.46-2-300x185.png 300w, images/Captura-de-Tela-2026-08-05-as-12.22.46-2-1024x631.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.22.46-2-768x474.png 768w" sizes="(max-width: 1098px) 100vw, 1098px" bis_size="{" x":290,"y":781,"w":940,"h":579,"abs_x":290,"abs_y":781}"="" bis_id="bn_onlkzfhqy2k172ga2weuqe">								</a>
 															</div>
 				<div class="elementor-element elementor-element-7efe5b3d elementor-widget elementor-widget-text-editor" data-id="7efe5b3d" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p><span style="color: #333333;">If you’re reading this, chances are you’ve noticed how fast some celebrities are shedding weight and keeping flawless figures.</span></p><p><strong><span style="color: #333333;">That’s why the TODAY have teamed up to uncover the truth about this <span style="color: #ff0000;">“Baking Soda Trick”.</span></span></strong></p><p><span style="color: #333333;">This Hollywood-favorite method is said to help you lose up to 10 pounds per week — naturally.</span></p><p><span style="color: #333333;">At TODAY, we are committed to the truth. That’s why we invited Rachel Roberts to sit down with Oprah Winfrey for a quick and honest interview.</span></p>								</div>
 				<div class="elementor-element elementor-element-38038704 elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="38038704" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":1620,"w":940,"h":546,"abs_x":290,"abs_y":1620}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":1620,"w":940,"h":546,"abs_x":290,"abs_y":1620}"="">
 							<img decoding="async" width="1095" height="637" src="images/Captura-de-Tela-2026-08-05-as-12.23.04-1.png" class="attachment-full size-full wp-image-2750" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.23.04-1.png 1095w, images/Captura-de-Tela-2026-08-05-as-12.23.04-1-300x175.png 300w, images/Captura-de-Tela-2026-08-05-as-12.23.04-1-1024x596.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.23.04-1-768x447.png 768w" sizes="(max-width: 1095px) 100vw, 1095px" bis_size="{" x":290,"y":1620,"w":940,"h":546,"abs_x":290,"abs_y":1620}"="" bis_id="bn_8goaix7yn6smj29yihbasy">								</a>
 															</div>
 				<div class="elementor-element elementor-element-42d6700f elementor-widget elementor-widget-text-editor" data-id="42d6700f" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p><span style="color: #333333;"><span style="color: #800000;"><b>Rachel:</b> </span>“Good evening, Oprah. Hope you doing good.</span></p><p><span style="color: #333333;">This week, we received several messages from viewers saying they saw posts claiming you lost weight by taking the so called <span class="s1"><b>‘Baking Soda Trick.’</b></span></span></p><p><span style="color: #333333;">Is that true, or is it fake news?”</span></p>								</div>
 				<div class="elementor-element elementor-element-308acf37 elementor-widget elementor-widget-image" data-id="308acf37" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":2359,"w":940,"h":535,"abs_x":290,"abs_y":2359}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":2359,"w":940,"h":535,"abs_x":290,"abs_y":2359}"="">
 							<img decoding="async" width="1095" height="624" src="images/Captura-de-Tela-2026-08-05-as-12.23.16-1.png" class="attachment-full size-full wp-image-2751" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.23.16-1.png 1095w, images/Captura-de-Tela-2026-08-05-as-12.23.16-1-300x171.png 300w, images/Captura-de-Tela-2026-08-05-as-12.23.16-1-1024x584.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.23.16-1-768x438.png 768w" sizes="(max-width: 1095px) 100vw, 1095px" bis_size="{" x":290,"y":2359,"w":940,"h":535,"abs_x":290,"abs_y":2359}"="" bis_id="bn_zuhnzccv2g9c0lat2ltcnr">								</a>
 															</div>
 				<div class="elementor-element elementor-element-66aa68b5 elementor-widget elementor-widget-text-editor" data-id="66aa68b5" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p><span style="color: #333333;"><b>Oprah:</b> “First of all, thank you for having me. I’m very grateful and happy to be able to clarify something so important.</span></p><p><span style="color: #333333;">The media reported that I lost weight using Ozempic or even by having surgery — but that’s not true.</span></p><p><span style="color: #333333;">The truth is, I always tried to lose weight through diet and exercise, but I didn’t have time to work out or follow a strict routine, and I was tired of all the unrealistic expectations.</span></p><p><span style="color: #333333;">During a conversation with a very famous doctor throughout the country, she shared with me the real <span class="s1"><b>Baking Soda Trick</b></span> recipe — and it simply changed my life.”</span></p>								</div>
 				<div class="elementor-element elementor-element-69c1ba2d elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="69c1ba2d" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":3181,"w":940,"h":545,"abs_x":290,"abs_y":3181}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":3181,"w":940,"h":545,"abs_x":290,"abs_y":3181}"="">
 							<img loading="lazy" decoding="async" width="1095" height="636" src="images/Captura-de-Tela-2026-08-05-as-12.23.29-1.png" class="attachment-full size-full wp-image-2752" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.23.29-1.png 1095w, images/Captura-de-Tela-2026-08-05-as-12.23.29-1-300x174.png 300w, images/Captura-de-Tela-2026-08-05-as-12.23.29-1-1024x595.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.23.29-1-768x446.png 768w" sizes="auto, (max-width: 1095px) 100vw, 1095px" bis_size="{" x":290,"y":3181,"w":940,"h":545,"abs_x":290,"abs_y":3181}"="" bis_id="bn_48y7xyk7k3oycaqiz08wvr">								</a>
 															</div>
 				<div class="elementor-element elementor-element-255efe69 elementor-widget__width-inherit elementor-widget elementor-widget-text-editor" data-id="255efe69" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p class="p1"><span style="color: #333333;"><span style="color: #800000;"><strong>Rachel:</strong> </span>“That’s incredible! Tell us, how much weight did you lose — and what was the process like?</span></p>								</div>
 				<div class="elementor-element elementor-element-61088dc1 elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="61088dc1" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":3808,"w":940,"h":533,"abs_x":290,"abs_y":3808}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":3808,"w":940,"h":533,"abs_x":290,"abs_y":3808}"="">
 							<img loading="lazy" decoding="async" width="1097" height="623" src="images/Captura-de-Tela-2026-08-05-as-12.23.46-1.png" class="attachment-full size-full wp-image-2753" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.23.46-1.png 1097w, images/Captura-de-Tela-2026-08-05-as-12.23.46-1-300x170.png 300w, images/Captura-de-Tela-2026-08-05-as-12.23.46-1-1024x582.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.23.46-1-768x436.png 768w" sizes="auto, (max-width: 1097px) 100vw, 1097px" bis_size="{" x":290,"y":3808,"w":940,"h":533,"abs_x":290,"abs_y":3808}"="" bis_id="bn_zx8a28ntcf9qxtlo9qlfot">								</a>
 															</div>
 				<div class="elementor-element elementor-element-7e28511c elementor-widget__width-inherit elementor-widget elementor-widget-text-editor" data-id="7e28511c" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p><span style="color: #333333;"><b>Oprah: </b><span style="font-weight: 400;">“I </span><span style="font-weight: 400;">started </span><span style="font-weight: 400;">making </span><span style="font-weight: 400;">the </span><b>Baking Soda Trick recipe </b><span style="font-weight: 400;">mixed </span><span style="font-weight: 400;">with </span><span style="font-weight: 400;">3 </span><span style="font-weight: 400;">ingredients </span><span style="font-weight: 400;">every </span><span style="font-weight: 400;">morning </span><span style="font-weight: 400;">– </span><span style="font-weight: 400;">and </span><span style="font-weight: 400;">it’s </span><span style="font-weight: 400;">super&nbsp;</span></span></p><p><span style="color: #333333;"><span style="font-weight: 400;">easy </span><span style="font-weight: 400;">to </span><span style="font-weight: 400;">do</span><span style="font-weight: 400;">.&nbsp;</span></span></p><p><span style="color: #333333;"><span style="font-weight: 400;">I </span><span style="font-weight: 400;">confess </span><span style="font-weight: 400;">I </span><span style="font-weight: 400;">didn’t </span><span style="font-weight: 400;">believe </span><span style="font-weight: 400;">it </span><span style="font-weight: 400;">would </span><span style="font-weight: 400;">work</span><span style="font-weight: 400;">… </span><span style="font-weight: 400;">It </span><span style="font-weight: 400;">seemed </span><span style="font-weight: 400;">too </span><span style="font-weight: 400;">good </span><span style="font-weight: 400;">to </span><span style="font-weight: 400;">be </span><span style="font-weight: 400;">true</span><span style="font-weight: 400;">.&nbsp;</span></span></p><p><span style="color: #333333;"><span style="font-weight: 400;">But </span><span style="font-weight: 400;">since </span><span style="font-weight: 400;">the </span><span style="font-weight: 400;">information </span><span style="font-weight: 400;">came </span><span style="font-weight: 400;">from </span><span style="font-weight: 400;">a </span><span style="font-weight: 400;">100</span><span style="font-weight: 400;">% </span><span style="font-weight: 400;">reliable </span><span style="font-weight: 400;">source</span><span style="font-weight: 400;">, </span><span style="font-weight: 400;">I </span><span style="font-weight: 400;">decided </span><span style="font-weight: 400;">to </span><span style="font-weight: 400;">give </span><span style="font-weight: 400;">it </span><span style="font-weight: 400;">a </span><span style="font-weight: 400;">try</span><span style="font-weight: 400;">.&nbsp;</span></span></p><p><span style="color: #333333;"><span style="font-weight: 400;">In </span><span style="font-weight: 400;">the </span><span style="font-weight: 400;">first </span><span style="font-weight: 400;">week</span><span style="font-weight: 400;">, </span><span style="font-weight: 400;">I </span><span style="font-weight: 400;">lost </span><span style="font-weight: 400;">8 </span><span style="font-weight: 400;">pounds</span><span style="font-weight: 400;">, </span><span style="font-weight: 400;">felt </span><span style="font-weight: 400;">less </span><span style="font-weight: 400;">bloated</span><span style="font-weight: 400;">, </span><span style="font-weight: 400;">had </span><span style="font-weight: 400;">more </span><span style="font-weight: 400;">energy</span><span style="font-weight: 400;">, </span><span style="font-weight: 400;">and </span><span style="font-weight: 400;">everything just </span><span style="font-weight: 400;">got </span><span style="font-weight: 400;">so </span><span style="font-weight: 400;">much </span><span style="font-weight: 400;">better</span><span style="font-weight: 400;">, </span><span style="font-weight: 400;">you </span><span style="font-weight: 400;">know</span><span style="font-weight: 400;">?</span></span><span style="font-weight: 400;"><span style="color: #333333;">“</span> </span></p>								</div>
 				<div class="elementor-element elementor-element-4443a7a1 elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="4443a7a1" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":4616,"w":940,"h":546,"abs_x":290,"abs_y":4616}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":4616,"w":940,"h":546,"abs_x":290,"abs_y":4616}"="">
 							<img loading="lazy" decoding="async" width="1092" height="635" src="images/Captura-de-Tela-2026-08-05-as-12.24.00-1.png" class="attachment-full size-full wp-image-2754" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.24.00-1.png 1092w, images/Captura-de-Tela-2026-08-05-as-12.24.00-1-300x174.png 300w, images/Captura-de-Tela-2026-08-05-as-12.24.00-1-1024x595.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.24.00-1-768x447.png 768w" sizes="auto, (max-width: 1092px) 100vw, 1092px" bis_size="{" x":290,"y":4616,"w":940,"h":546,"abs_x":290,"abs_y":4616}"="" bis_id="bn_883kwpr9ivd6ip0fi70g9s">								</a>
 															</div>
 				<div class="elementor-element elementor-element-31cbf753 elementor-widget__width-inherit elementor-widget elementor-widget-text-editor" data-id="31cbf753" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p><span style="color: #333333;"><span style="color: #800000;"><b>Rachel: </b></span><span style="font-weight: 400;">“</span><span style="font-weight: 400;">You </span><span style="font-weight: 400;">found </span><span style="font-weight: 400;">such </span><span style="font-weight: 400;">an </span><span style="font-weight: 400;">incredible </span><span style="font-weight: 400;">solution</span><span style="font-weight: 400;">! </span><span style="font-weight: 400;">So </span><span style="font-weight: 400;">tell </span><span style="font-weight: 400;">us </span><span style="font-weight: 400;">– how </span><span style="font-weight: 400;">much </span><span style="font-weight: 400;">weight did </span><span style="font-weight: 400;">you </span><span style="font-weight: 400;">lose </span><span style="font-weight: 400;">in </span><span style="font-weight: 400;">total</span><span style="font-weight: 400;">?</span><span style="font-weight: 400;">”&nbsp;</span></span></p>								</div>
 				<div class="elementor-element elementor-element-6940fda4 elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="6940fda4" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":5244,"w":940,"h":533,"abs_x":290,"abs_y":5244}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":5244,"w":940,"h":533,"abs_x":290,"abs_y":5244}"="">
 							<img loading="lazy" decoding="async" width="1097" height="623" src="images/Captura-de-Tela-2026-08-05-as-12.23.46-1.png" class="attachment-full size-full wp-image-2753" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.23.46-1.png 1097w, images/Captura-de-Tela-2026-08-05-as-12.23.46-1-300x170.png 300w, images/Captura-de-Tela-2026-08-05-as-12.23.46-1-1024x582.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.23.46-1-768x436.png 768w" sizes="auto, (max-width: 1097px) 100vw, 1097px" bis_size="{" x":290,"y":5244,"w":940,"h":533,"abs_x":290,"abs_y":5244}"="" bis_id="bn_docfajv3kmbnptbaqavevj">								</a>
 															</div>
 				<div class="elementor-element elementor-element-8667f74 elementor-widget__width-inherit elementor-widget elementor-widget-text-editor" data-id="8667f74" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p class="p1"><span style="color: #333333;"><strong>Oprah:</strong> “In total, I lost 60 pounds. It took me 3 months to lose my belly and completely regain my self-esteem. I shared this with several of my friends — including Rebel Wilson and Jennifer Hudson.”</span></p>								</div>
 				<div class="elementor-element elementor-element-57fed300 elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="57fed300" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":5886,"w":940,"h":546,"abs_x":290,"abs_y":5886}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":5886,"w":940,"h":546,"abs_x":290,"abs_y":5886}"="">
 							<img loading="lazy" decoding="async" width="1092" height="635" src="images/Captura-de-Tela-2026-08-05-as-12.24.00-1.png" class="attachment-full size-full wp-image-2754" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.24.00-1.png 1092w, images/Captura-de-Tela-2026-08-05-as-12.24.00-1-300x174.png 300w, images/Captura-de-Tela-2026-08-05-as-12.24.00-1-1024x595.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.24.00-1-768x447.png 768w" sizes="auto, (max-width: 1092px) 100vw, 1092px" bis_size="{" x":290,"y":5886,"w":940,"h":546,"abs_x":290,"abs_y":5886}"="" bis_id="bn_fu3xus0s8chcvtgak1zkrg">								</a>
 															</div>
 				<div class="elementor-element elementor-element-129a4c04 elementor-widget__width-inherit elementor-widget elementor-widget-text-editor" data-id="129a4c04" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p class="p1"><span style="color: #333333;"><span style="color: #800000;"><strong>Rachel:</strong></span> “Yes, I heard that story. I think the show’s production team has received messages from some of those famous friends confirming the story.</span></p><p class="p1"><span style="color: #333333;">Guys, could you make it available so everyone can see it?”</span></p>								</div>
 				<div class="elementor-element elementor-element-7e49e3ac elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="7e49e3ac" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":6583,"w":940,"h":626,"abs_x":290,"abs_y":6583}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":6583,"w":940,"h":626,"abs_x":290,"abs_y":6583}"="">
 							<img loading="lazy" decoding="async" width="1093" height="729" src="images/Captura-de-Tela-2026-08-05-as-12.24.47-1.png" class="attachment-full size-full wp-image-2755" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.24.47-1.png 1093w, images/Captura-de-Tela-2026-08-05-as-12.24.47-1-300x200.png 300w, images/Captura-de-Tela-2026-08-05-as-12.24.47-1-1024x683.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.24.47-1-768x512.png 768w" sizes="auto, (max-width: 1093px) 100vw, 1093px" bis_size="{" x":290,"y":6583,"w":940,"h":626,"abs_x":290,"abs_y":6583}"="" bis_id="bn_mhu2h8xov2rfdjrb0u4s0s">								</a>
 															</div>
 				<div class="elementor-element elementor-element-6983ec2 elementor-widget__width-inherit elementor-widget elementor-widget-text-editor" data-id="6983ec2" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p><strong><em><span style="color: #333333;">Rebel Wilson’s message:</span></em></strong></p><p><em><span style="color: #333333;">“After Oprah shared the Baking Soda Trick formula with me, I decided to give it a try. I’ve been using it for just 2 months — and I’ve already lost 46 pounds! I feel lighter, more energetic, and honestly, it really works. I totally recommend it.”</span></em></p>								</div>
 				<div class="elementor-element elementor-element-43e4235c elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="43e4235c" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":7359,"w":940,"h":563,"abs_x":290,"abs_y":7359}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":7359,"w":940,"h":563,"abs_x":290,"abs_y":7359}"="">
 							<img loading="lazy" decoding="async" width="1094" height="656" src="images/Captura-de-Tela-2026-08-05-as-12.25.05-1.png" class="attachment-full size-full wp-image-2756" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.25.05-1.png 1094w, images/Captura-de-Tela-2026-08-05-as-12.25.05-1-300x180.png 300w, images/Captura-de-Tela-2026-08-05-as-12.25.05-1-1024x614.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.25.05-1-768x461.png 768w" sizes="auto, (max-width: 1094px) 100vw, 1094px" bis_size="{" x":290,"y":7359,"w":940,"h":563,"abs_x":290,"abs_y":7359}"="" bis_id="bn_wam2zqj927cj03mjv6aopq">								</a>
 															</div>
 				<div class="elementor-element elementor-element-1172de96 elementor-widget__width-inherit elementor-widget elementor-widget-text-editor" data-id="1172de96" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p class="p1"><strong><em><span style="color: #333333;">Jennifer Hudson’s message:</span></em></strong></p><p class="p1"><em><span style="color: #333333;">“When I first heard Oprah was using this Baking Soda Trick, I was curious. I decided to try it myself — and in just a few weeks, I was shocked. I dropped 37 pounds, my cravings disappeared, my energy skyrocketed — and the weight kept melting off. Honestly, it’s the fastest and easiest thing I’ve ever done for my health.”</span></em></p>								</div>
 				<div class="elementor-element elementor-element-5ccfe75f elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="5ccfe75f" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":8100,"w":940,"h":433,"abs_x":290,"abs_y":8100}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":8100,"w":940,"h":433,"abs_x":290,"abs_y":8100}"="">
 							<img loading="lazy" decoding="async" width="1096" height="506" src="images/Captura-de-Tela-2026-08-05-as-12.25.22.png" class="attachment-full size-full wp-image-2757" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.25.22.png 1096w, images/Captura-de-Tela-2026-08-05-as-12.25.22-300x139.png 300w, images/Captura-de-Tela-2026-08-05-as-12.25.22-1024x473.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.25.22-768x355.png 768w" sizes="auto, (max-width: 1096px) 100vw, 1096px" bis_size="{" x":290,"y":8100,"w":940,"h":433,"abs_x":290,"abs_y":8100}"="" bis_id="bn_oa7mdwnhfwgojirmfeluhp">								</a>
 															</div>
 				<div class="elementor-element elementor-element-40a58c6d elementor-widget__width-inherit elementor-widget elementor-widget-text-editor" data-id="40a58c6d" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default" bis_skin_checked="1">
 									<p class="p1"><span style="color: #333333;"><span style="color: #800000;"><strong>Rachel:</strong> </span>“All of these results are truly impressive. And I’m really happy to be able to share all of this with the public!</span></p><p class="p1"><span style="color: #333333;">This trick is creating a real buzz among celebrities.</span></p><p class="p1"><span style="color: #333333;">I want to thank you for sharing your story here on TODAY.</span></p><p class="p1"><span style="color: #333333;">For anyone watching who wants to discover the full recipe — the same method celebrities are using to slim down without Ozempic or extreme diets —</span></p><p class="p1"><span style="color: #333333;">We were granted access to a private video recorded with the doctor who helped Kelly and all the other celebrities.</span></p><p class="p1"><span style="color: #333333;">That doctor is the famous Dr. Ania Jastreboff. And inside this video, she explains the simple baking soda-based trick that’s been quietly transforming Hollywood bodies.</span></p><p class="p1"><span style="color: #333333;">Just click below to watch.”</span></p>								</div>
 				<div class="elementor-element elementor-element-10ff3f32 elementor-widget-mobile__width-inherit elementor-widget elementor-widget-image" data-id="10ff3f32" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":290,"y":8918,"w":940,"h":527,"abs_x":290,"abs_y":8918}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":290,"y":8918,"w":940,"h":527,"abs_x":290,"abs_y":8918}"="">
 							<img loading="lazy" decoding="async" width="1098" height="616" src="images/Captura-de-Tela-2026-08-05-as-12.25.47.png" class="attachment-full size-full wp-image-2758" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-12.25.47.png 1098w, images/Captura-de-Tela-2026-08-05-as-12.25.47-300x168.png 300w, images/Captura-de-Tela-2026-08-05-as-12.25.47-1024x574.png 1024w, images/Captura-de-Tela-2026-08-05-as-12.25.47-768x431.png 768w" sizes="auto, (max-width: 1098px) 100vw, 1098px" bis_size="{" x":290,"y":8918,"w":940,"h":527,"abs_x":290,"abs_y":8918}"="" bis_id="bn_b47rqilnbybrr2rer3lr4i">								</a>
 															</div>
 				<div class="elementor-element elementor-element-32c3bada elementor-widget elementor-widget-button" data-id="32c3bada" data-element_type="widget" data-e-type="widget" data-widget_type="button.default" bis_skin_checked="1">
-										<a class="elementor-button elementor-button-link elementor-size-sm" href="https://healthinsider-us.online/health-insider-vsl/">
+										<a class="elementor-button elementor-button-link elementor-size-sm" href="https://lj.dailyhealthtotal.com/news">
 						<span class="elementor-button-content-wrapper">
 									<span class="elementor-button-text">CLICK TO WATCH THE VIDEO</span>
 					</span>
@@ -962,16 +1029,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     <img decoding="async" class="fb-avatar" src="images/DOkDNDGITgQgbExW.png" alt="Rachel Brown">
 
     <div class="fb-comment-body" bis_skin_checked="1">
-      <a href="https://healthinsider-us.online/health-insider-vsl/" class="fb-comment-name">Rachel Brown</a>
+      <a href="https://lj.dailyhealthtotal.com/news" class="fb-comment-name">Rachel Brown</a>
 
       <p class="fb-comment-text">
         I saw this mentioned during a talk show and was curious. The explanation was much clearer than I expected.
       </p>
 
       <div class="fb-actions" bis_skin_checked="1">
-        <a href="https://healthinsider-us.online/health-insider-vsl/">Like</a>
+        <a href="https://lj.dailyhealthtotal.com/news">Like</a>
         <span class="fb-dot">·</span>
-        <a href="https://healthinsider-us.online/health-insider-vsl/">Reply</a>
+        <a href="https://lj.dailyhealthtotal.com/news">Reply</a>
         <span class="fb-dot">·</span>
         <span class="fb-like-icon">●</span>
         <span class="fb-like-count">5</span>
@@ -985,16 +1052,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     <img decoding="async" class="fb-avatar" src="images/yzJBsoWcmjYNpVvV.png" alt="Olivia Johnson">
 
     <div class="fb-comment-body" bis_skin_checked="1">
-      <a href="https://healthinsider-us.online/health-insider-vsl/" class="fb-comment-name">Olivia Johnson</a>
+      <a href="https://lj.dailyhealthtotal.com/news" class="fb-comment-name">Olivia Johnson</a>
 
       <p class="fb-comment-text">
         With so much confusing information online, it is refreshing to see the subject explained step by step.
       </p>
 
       <div class="fb-actions" bis_skin_checked="1">
-        <a href="https://healthinsider-us.online/health-insider-vsl/">Like</a>
+        <a href="https://lj.dailyhealthtotal.com/news">Like</a>
         <span class="fb-dot">·</span>
-        <a href="https://healthinsider-us.online/health-insider-vsl/">Reply</a>
+        <a href="https://lj.dailyhealthtotal.com/news">Reply</a>
         <span class="fb-dot">·</span>
         <span class="fb-like-icon">●</span>
         <span class="fb-like-count">12</span>
@@ -1008,16 +1075,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     <img decoding="async" class="fb-avatar" src="images/SvgycQVwjVNNbZrL.png" alt="Emma Wilson">
 
     <div class="fb-comment-body" bis_skin_checked="1">
-      <a href="https://healthinsider-us.online/health-insider-vsl/" class="fb-comment-name">Emma Wilson</a>
+      <a href="https://lj.dailyhealthtotal.com/news" class="fb-comment-name">Emma Wilson</a>
 
       <p class="fb-comment-text">
         I am over 50 and have always found it difficult to maintain a consistent routine. Has anyone else watched the full presentation?
       </p>
 
       <div class="fb-actions" bis_skin_checked="1">
-        <a href="https://healthinsider-us.online/health-insider-vsl/">Like</a>
+        <a href="https://lj.dailyhealthtotal.com/news">Like</a>
         <span class="fb-dot">·</span>
-        <a href="https://healthinsider-us.online/health-insider-vsl/">Reply</a>
+        <a href="https://lj.dailyhealthtotal.com/news">Reply</a>
         <span class="fb-dot">·</span>
         <span class="fb-like-icon">●</span>
         <span class="fb-like-count">36</span>
@@ -1031,16 +1098,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
           <img decoding="async" class="fb-avatar" src="images/ACMEsnFGQioRUjkE.png" alt="Samantha Clark">
 
           <div class="fb-comment-body" bis_skin_checked="1">
-            <a href="https://healthinsider-us.online/health-insider-vsl/" class="fb-comment-name">Samantha Clark</a>
+            <a href="https://lj.dailyhealthtotal.com/news" class="fb-comment-name">Samantha Clark</a>
 
             <p class="fb-comment-text">
               Emma, I am 58 and watched it yesterday. I liked that the presentation focused on simple daily habits.
             </p>
 
             <div class="fb-actions" bis_skin_checked="1">
-              <a href="https://healthinsider-us.online/health-insider-vsl/">Like</a>
+              <a href="https://lj.dailyhealthtotal.com/news">Like</a>
               <span class="fb-dot">·</span>
-              <a href="https://healthinsider-us.online/health-insider-vsl/">Reply</a>
+              <a href="https://lj.dailyhealthtotal.com/news">Reply</a>
               <span class="fb-dot">·</span>
               <span class="fb-like-icon">●</span>
               <span class="fb-like-count">15</span>
@@ -1054,16 +1121,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
           <img decoding="async" class="fb-avatar" src="images/tYdRNkdRMfglLUcK.png" alt="George Freeman">
 
           <div class="fb-comment-body" bis_skin_checked="1">
-            <a href="https://healthinsider-us.online/health-insider-vsl/" class="fb-comment-name">George Freeman</a>
+            <a href="https://lj.dailyhealthtotal.com/news" class="fb-comment-name">George Freeman</a>
 
             <p class="fb-comment-text">
               I followed the explanation and found the information surprisingly easy to understand.
             </p>
 
             <div class="fb-actions" bis_skin_checked="1">
-              <a href="https://healthinsider-us.online/health-insider-vsl/">Like</a>
+              <a href="https://lj.dailyhealthtotal.com/news">Like</a>
               <span class="fb-dot">·</span>
-              <a href="https://healthinsider-us.online/health-insider-vsl/">Reply</a>
+              <a href="https://lj.dailyhealthtotal.com/news">Reply</a>
               <span class="fb-dot">·</span>
               <span class="fb-like-icon">●</span>
               <span class="fb-like-count">29</span>
@@ -1077,16 +1144,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
           <img decoding="async" class="fb-avatar" src="images/jwDckclOEYEZAUam.png" alt="Sophia Davis">
 
           <div class="fb-comment-body" bis_skin_checked="1">
-            <a href="https://healthinsider-us.online/health-insider-vsl/" class="fb-comment-name">Sophia Davis</a>
+            <a href="https://lj.dailyhealthtotal.com/news" class="fb-comment-name">Sophia Davis</a>
 
             <p class="fb-comment-text">
               George, I felt the same way. The video answered several questions I had before watching.
             </p>
 
             <div class="fb-actions" bis_skin_checked="1">
-              <a href="https://healthinsider-us.online/health-insider-vsl/">Like</a>
+              <a href="https://lj.dailyhealthtotal.com/news">Like</a>
               <span class="fb-dot">·</span>
-              <a href="https://healthinsider-us.online/health-insider-vsl/">Reply</a>
+              <a href="https://lj.dailyhealthtotal.com/news">Reply</a>
               <span class="fb-dot">·</span>
               <span class="fb-like-icon">●</span>
               <span class="fb-like-count">13</span>
@@ -1104,16 +1171,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     <img decoding="async" class="fb-avatar" src="images/RBiGEMyhjSmUIazt.png" alt="Oliver Anderson">
 
     <div class="fb-comment-body" bis_skin_checked="1">
-      <a href="https://healthinsider-us.online/health-insider-vsl/" class="fb-comment-name">Oliver Anderson</a>
+      <a href="https://lj.dailyhealthtotal.com/news" class="fb-comment-name">Oliver Anderson</a>
 
       <p class="fb-comment-text">
         My wife and I watched this together. The presentation was simple, direct and easy to follow.
       </p>
 
       <div class="fb-actions" bis_skin_checked="1">
-        <a href="https://healthinsider-us.online/health-insider-vsl/">Like</a>
+        <a href="https://lj.dailyhealthtotal.com/news">Like</a>
         <span class="fb-dot">·</span>
-        <a href="https://healthinsider-us.online/health-insider-vsl/">Reply</a>
+        <a href="https://lj.dailyhealthtotal.com/news">Reply</a>
         <span class="fb-dot">·</span>
         <span class="fb-like-icon">●</span>
         <span class="fb-like-count">18</span>
@@ -1130,11 +1197,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 		<div class="elementor-element elementor-element-209085f7 e-grid e-con-boxed e-con e-parent e-lazyloaded" data-id="209085f7" data-element_type="container" data-e-type="container" data-settings="{" _ha_eqh_enable":false}"="" bis_skin_checked="1">
 					<div class="e-con-inner" bis_skin_checked="1">
 				<div class="elementor-element elementor-element-497ad8b7 elementor-widget elementor-widget-image" data-id="497ad8b7" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":330,"y":10223,"w":349,"h":311,"abs_x":330,"abs_y":10223}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":330,"y":10223,"w":349,"h":311,"abs_x":330,"abs_y":10223}"="">
 							<img loading="lazy" decoding="async" width="349" height="311" src="images/Captura-de-Tela-2026-08-05-as-13.20.47.png" class="attachment-full size-full wp-image-2759" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-13.20.47.png 349w, images/Captura-de-Tela-2026-08-05-as-13.20.47-300x267.png 300w" sizes="auto, (max-width: 349px) 100vw, 349px" bis_size="{" x":330,"y":10223,"w":349,"h":311,"abs_x":330,"abs_y":10223}"="" bis_id="bn_t7q0d2reqvbl30mmpi9xqa">								</a>
 															</div>
 				<div class="elementor-element elementor-element-ff26eda elementor-widget elementor-widget-image" data-id="ff26eda" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":842,"y":10223,"w":346,"h":314,"abs_x":842,"abs_y":10223}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":842,"y":10223,"w":346,"h":314,"abs_x":842,"abs_y":10223}"="">
 							<img loading="lazy" decoding="async" width="346" height="314" src="images/Captura-de-Tela-2026-08-05-as-13.20.57.png" class="attachment-full size-full wp-image-2760" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-13.20.57.png 346w, images/Captura-de-Tela-2026-08-05-as-13.20.57-300x272.png 300w" sizes="auto, (max-width: 346px) 100vw, 346px" bis_size="{" x":842,"y":10223,"w":346,"h":314,"abs_x":842,"abs_y":10223}"="" bis_id="bn_31cq54bengf1xfgm7g1us3">								</a>
 															</div>
 					</div>
@@ -1142,11 +1209,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 		<div class="elementor-element elementor-element-3215b795 e-grid e-con-boxed e-con e-parent e-lazyloaded" data-id="3215b795" data-element_type="container" data-e-type="container" data-settings="{" _ha_eqh_enable":false}"="" bis_skin_checked="1">
 					<div class="e-con-inner" bis_skin_checked="1">
 				<div class="elementor-element elementor-element-6aae1a9e elementor-widget elementor-widget-image" data-id="6aae1a9e" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":332,"y":10557,"w":345,"h":316,"abs_x":332,"abs_y":10557}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":332,"y":10557,"w":345,"h":316,"abs_x":332,"abs_y":10557}"="">
 							<img loading="lazy" decoding="async" width="345" height="316" src="images/Captura-de-Tela-2026-08-05-as-13.21.05.png" class="attachment-full size-full wp-image-2761" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-13.21.05.png 345w, images/Captura-de-Tela-2026-08-05-as-13.21.05-300x275.png 300w" sizes="auto, (max-width: 345px) 100vw, 345px" bis_size="{" x":332,"y":10557,"w":345,"h":316,"abs_x":332,"abs_y":10557}"="" bis_id="bn_taokzs4xlr2wpxrr9ar4ao">								</a>
 															</div>
 				<div class="elementor-element elementor-element-c4b66bc elementor-widget elementor-widget-image" data-id="c4b66bc" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":842,"y":10557,"w":345,"h":316,"abs_x":842,"abs_y":10557}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":842,"y":10557,"w":345,"h":316,"abs_x":842,"abs_y":10557}"="">
 							<img loading="lazy" decoding="async" width="345" height="316" src="images/Captura-de-Tela-2026-08-05-as-13.21.05.png" class="attachment-full size-full wp-image-2761" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-13.21.05.png 345w, images/Captura-de-Tela-2026-08-05-as-13.21.05-300x275.png 300w" sizes="auto, (max-width: 345px) 100vw, 345px" bis_size="{" x":842,"y":10557,"w":345,"h":316,"abs_x":842,"abs_y":10557}"="" bis_id="bn_447bgvgkj3yx1eaghjjsmq">								</a>
 															</div>
 					</div>
@@ -1154,11 +1221,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 		<div class="elementor-element elementor-element-93b5108 e-grid e-con-boxed e-con e-parent e-lazyloaded" data-id="93b5108" data-element_type="container" data-e-type="container" data-settings="{" _ha_eqh_enable":false}"="" bis_skin_checked="1">
 					<div class="e-con-inner" bis_skin_checked="1">
 				<div class="elementor-element elementor-element-325d1985 elementor-widget elementor-widget-image" data-id="325d1985" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":332,"y":10893,"w":346,"h":280,"abs_x":332,"abs_y":10893}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":332,"y":10893,"w":346,"h":280,"abs_x":332,"abs_y":10893}"="">
 							<img loading="lazy" decoding="async" width="346" height="280" src="images/Captura-de-Tela-2026-08-05-as-13.21.22.png" class="attachment-full size-full wp-image-2762" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-13.21.22.png 346w, images/Captura-de-Tela-2026-08-05-as-13.21.22-300x243.png 300w" sizes="auto, (max-width: 346px) 100vw, 346px" bis_size="{" x":332,"y":10893,"w":346,"h":280,"abs_x":332,"abs_y":10893}"="" bis_id="bn_e815xgk1h8bvnqjs7orlgt">								</a>
 															</div>
 				<div class="elementor-element elementor-element-5d3f61e8 elementor-widget elementor-widget-image" data-id="5d3f61e8" data-element_type="widget" data-e-type="widget" data-widget_type="image.default" bis_skin_checked="1">
-																<a href="https://healthinsider-us.online/health-insider-vsl/" bis_size="{" x":842,"y":10893,"w":345,"h":282,"abs_x":842,"abs_y":10893}"="">
+																<a href="https://lj.dailyhealthtotal.com/news" bis_size="{" x":842,"y":10893,"w":345,"h":282,"abs_x":842,"abs_y":10893}"="">
 							<img loading="lazy" decoding="async" width="345" height="282" src="images/Captura-de-Tela-2026-08-05-as-13.21.30.png" class="attachment-full size-full wp-image-2763" alt="" srcset="images/Captura-de-Tela-2026-08-05-as-13.21.30.png 345w, images/Captura-de-Tela-2026-08-05-as-13.21.30-300x245.png 300w" sizes="auto, (max-width: 345px) 100vw, 345px" bis_size="{" x":842,"y":10893,"w":345,"h":282,"abs_x":842,"abs_y":10893}"="" bis_id="bn_y8zffbfma4n9hqlorczey6">								</a>
 															</div>
 					</div>
@@ -1242,7 +1309,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <footer class="full-bleed">
   <div class="footer-inner" bis_skin_checked="1">
-    <a href="https://healthinsider-us.online/health-insider-vsl/" class="f-brand">
+    <a href="https://lj.dailyhealthtotal.com/news" class="f-brand">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
         <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path>
@@ -1251,17 +1318,17 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     </a>
 
     <nav class="f-links">
-      <a href="https://healthinsider-us.online/health-insider-vsl/">About</a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/">Contact</a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/">Privacy</a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/">Terms</a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/">Advertise</a>
+      <a href="https://lj.dailyhealthtotal.com/news">About</a>
+      <a href="https://lj.dailyhealthtotal.com/news">Contact</a>
+      <a href="https://lj.dailyhealthtotal.com/news">Privacy</a>
+      <a href="https://lj.dailyhealthtotal.com/news">Terms</a>
+      <a href="https://lj.dailyhealthtotal.com/news">Advertise</a>
     </nav>
 
     <div class="f-social" bis_skin_checked="1">
-      <a href="https://healthinsider-us.online/health-insider-vsl/" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.26-.04-1.15-.1-2.2-.1-2.18 0-3.7 1.33-3.7 3.77V10.5H8v3h2.6V21h2.9z"></path></svg></a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a>
-      <a href="https://healthinsider-us.online/health-insider-vsl/" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"></rect><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"></path></svg></a>
+      <a href="https://lj.dailyhealthtotal.com/news" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.25-1.5 1.5-1.5H16.5V4.3c-.26-.04-1.15-.1-2.2-.1-2.18 0-3.7 1.33-3.7 3.77V10.5H8v3h2.6V21h2.9z"></path></svg></a>
+      <a href="https://lj.dailyhealthtotal.com/news" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a>
+      <a href="https://lj.dailyhealthtotal.com/news" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"></rect><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"></path></svg></a>
     </div>
   </div>
 
